@@ -12,26 +12,27 @@ document.getElementById("year").textContent = now.toDateString();
 
 
 
-const form = document.querySelector("form");
-  form.addEventListener("submit", function(event) {
-    event.preventDefault(); // prevent default submission
+const form = document.getElementById("contactForm");
 
-    fetch(form.action, {
-      method: form.method,
-      body: new FormData(form),
-      headers: { 'Accept': 'application/json' }
-    }).then(response => {
-      if (response.ok) {
-        // Show success modal
-        const successModal = new bootstrap.Modal(document.getElementById('successModal'));
-        successModal.show();
+form.addEventListener("submit", function(e) {
+  e.preventDefault(); // prevent default redirect
 
-        // Reset the form
-        form.reset();
-      } else {
-        alert("Oops! There was a problem submitting your form.");
-      }
-    }).catch(error => {
-      alert("Oops! There was a problem submitting your form.");
-    });
-  });
+  const formData = new FormData(form);
+
+  fetch("https://formspree.io/f/mwvvpeer", {
+    method: "POST",
+    body: formData,
+    headers: { "Accept": "application/json" }
+  })
+  .then(response => {
+    if(response.ok){
+      // Show Bootstrap modal
+      const modal = new bootstrap.Modal(document.getElementById('successModal'));
+      modal.show();
+      form.reset(); // reset form
+    } else {
+      alert("Oops! Something went wrong. Please try again.");
+    }
+  })
+  .catch(() => alert("Oops! Something went wrong. Please try again."));
+});
