@@ -14,7 +14,7 @@ document.getElementById("year").textContent = now.toDateString();
 const form = document.getElementById("contactForm");
 
 form.addEventListener("submit", function(e) {
-  e.preventDefault(); // prevent default redirect
+  e.preventDefault(); // prevent normal redirect
 
   const formData = new FormData(form);
 
@@ -25,10 +25,9 @@ form.addEventListener("submit", function(e) {
   })
   .then(response => {
     if(response.ok){
-      // Show Bootstrap modal
-      const modal = new bootstrap.Modal(document.getElementById('successModal'));
-      modal.show();
-      form.reset(); // reset form
+      alert("Message sent successfully!"); // simple success alert
+      form.reset();
+      window.location.href = "index.html"; // redirect after alert
     } else {
       alert("Oops! Something went wrong. Please try again.");
     }
