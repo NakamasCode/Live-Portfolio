@@ -1,0 +1,146 @@
+:root {
+  /* Background Colors */
+  --bg-main: #FAFAFA;          /* Off-white main background */
+  --bg-section: #E0E0E0;       /* Light gray for cards or sections */
+  --bg-footer: #2B2B2B;        /* Dark gray for footer */
+
+  /* Text Colors */
+  --text-primary: #333333;     /* Main text */
+  --text-secondary: #777777;   /* Subtext / captions */
+  --text-footer: #FAFAFA;      /* Footer text */
+
+  /* Accent Colors */
+  --accent-primary: #4A90E2;   /* Soft blue for links */
+  --accent-secondary: #F2C94C; /* Muted gold for hover */
+}
+
+/* Body & Sections */
+body {
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+}
+
+section {
+  background-color: var(--bg-section);
+}
+
+footer {
+  background-color: var(--bg-footer);
+  color: var(--text-footer);
+}
+
+/* Links */
+a {
+  color: var(--accent-primary);
+}
+
+a:hover {
+  color: var(--accent-secondary);
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--bg-main);
+}
+
+.navbar-brand {
+  color: var(--text-primary);
+  font-weight: bold;
+}
+
+.navbar-brand:hover {
+  color: var(--accent-primary);
+}
+
+.nav-link {
+  color: var(--text-primary);
+  margin-left: 1rem;
+}
+
+.nav-link:hover {
+  color: var(--accent-primary);
+}
+
+.nav-link.active {
+  color: var(--accent-primary);
+  font-weight: 500;
+}
+
+/* Hero Section */
+/* .hero {
+  min-height: 100vh;
+  background-image: url('/static/images/hero.jpg');
+  background-size: cover;
+  background-position: center; 
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+} */
+
+
+.card-img-fixed {
+  height: 180px;       /* or whatever fits your card design */
+  width: 100%;         /* fill the card width */
+  object-fit: cover;   /* crop to fit, no stretching */
+}
+
+
+.icon-box {
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;  /* makes it circular */
+  background: #f8f9fa; /* light gray */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.icon-box:hover {
+  background: #0d6efd; /* Bootstrap primary blue */
+  transform: translateY(-5px);
+}
+
+.icon-box:hover img {
+  filter: brightness(0) invert(1); /* make icon white on hover */
+}
+
+
+.index-img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+}
+
+/* Smaller screens */
+@media (max-width: 576px) {
+  .index-img {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+
+ .about-img {
+  width: 100%;        /* full width of column */
+  max-width: 400px;   /* desktop max */
+  height: auto;       /* lets height scale proportionally */
+  object-fit: cover;  /* crops nicely if wider than tall */
+  border-radius: 0.5rem; /* same as rounded-2 */
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .about-img {
+    max-width: 300px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .about-img {
+    max-width: 250px;
+  }
+}

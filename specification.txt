@@ -1,0 +1,24 @@
+HTML Tags Used:
+- <nav>
+- <ul>
+- <li>
+- <a>
+- <img>
+- <form>
+- <input>
+- <textarea>
+- <button>
+- <footer>
+
+CSS Properties Used:
+- font-family
+- background-color
+- color
+- font-weight
+- border
+
+JavaScript Feature:
+- A simple script listens for a form submission and shows an alert when submitted, then resets the form.
+
+Bootstrap Features:
+- Navbar, grid system, buttons, cards, and form styling were used for layout and responsiveness.
